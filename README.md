@@ -1,1 +1,1 @@
-# Smart-Bin
+# Smart-Bins
