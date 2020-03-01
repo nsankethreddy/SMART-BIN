@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './pages/animated_map_controller.dart';
+
 import './pages/circle.dart';
 import './pages/esri.dart';
 import './pages/home.dart';
@@ -15,77 +17,8 @@ import './pages/plugin_zoombuttons.dart';
 import './pages/polyline.dart';
 import './pages/tap_to_add.dart';
 import './pages/wms_tile_layer.dart';
-import './pages/animated_map_controller.dart';
 
-
-
-void main() {
-  runApp(MaterialApp(
-    title: 'smart-bin',
-    home: TutorialHome(),
-  ));
-}
-
-class TutorialHome extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Scaffold is a layout for the major Material Components.
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Navigation menu',
-          onPressed: null,
-        ),
-        title: Text('Smart bin'),
-        backgroundColor: Colors.accents[3],
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            tooltip: 'Search',
-            onPressed: null,
-          ),
-        ],
-      ),
-      // body is the majority of the screen.
-      body: Center(
-        child: Text('smart bin systems'),
-      ),
-      
-      floatingActionButton: MyButton()
-      //  FloatingActionButton(
-      //   backgroundColor: Colors.accents[3],
-      //   tooltip: 'Add', // used by assistive technologies
-      //   child: Icon(Icons.add),
-      //   onPressed: null,
-      // ),
-
-    );
-  }
-}
-
-class MyButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        print('MyButton was tapped!');
-      },
-      child: Container(
-        height: 36.0,
-        padding: const EdgeInsets.all(10.0),
-        margin: const EdgeInsets.symmetric(horizontal: 80.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(33.0),
-          color: Colors.accents[3],
-        ),
-        child: Center(
-          child: Text('Click'),
-        ),
-      ),
-    );
-  }
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
