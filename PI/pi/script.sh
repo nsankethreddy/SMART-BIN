@@ -6,3 +6,4 @@ ssh user@192.168.43.108 << EOF
 EOF
 scp user@192.168.43.108:~/a.txt .
 python3 ~/tests/servo2.py
+python3 ~/tests/ul.py

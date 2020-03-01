@@ -14,4 +14,4 @@ def captureImage():
 
 captureImage()
 
-subprocess.run(["scp", "/home/pi/Desktop/image.jpg", "user@192.168.43.184:/home/user"])
+subprocess.run(["scp", "/home/pi/Desktop/image.jpg", "user@192.168.43.108:/home/user"])
