@@ -8,8 +8,9 @@ include_once('connect/mysqli_connect.php');
 $errors = array();
 $username = "";
 
-if(!$dbc){
-    echo "Unable to connect";
+if ($dbc -> connect_errno) {
+  echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+  exit();
 }
 else
 {
