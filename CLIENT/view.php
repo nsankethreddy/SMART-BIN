@@ -6,9 +6,12 @@ session_start();
 
 include_once('connect/mysqli_connect.php');
 $errors = array();
-$username = "";
 
-if ($dbc -> connect_errno) {
+$username = "root";
+$password = "Reaper42@";
+$database = "smart_bins";
+$mysqli = new mysqli("localhost", $username, $password, $database);
+if ($mysqli -> connect_errno) {
   echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
   exit();
 }
