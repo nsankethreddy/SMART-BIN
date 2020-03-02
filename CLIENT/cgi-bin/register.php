@@ -168,7 +168,7 @@ if(isset($_POST['submit'])){
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="navbar-brand" href="#">
-                    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt="">
+                    <!-- <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> -->
                 </a>
             </li>
             <li class="nav-item">
@@ -198,17 +198,6 @@ if(isset($_POST['submit'])){
         <a href = "../cgi-bin/login.php" >Already a user? Sign in</a>
 
     </form>
-    <!-- <?php  if (count($errors) > 0) : ?>
-  <div class="error">
-  	<?php foreach ($errors as $error) : ?>
-		<script>
-			var error = <?php echo json_encode($error) ?>;
-		</script>
-		<!-- <script src = '../src/error.js'></script> -->
-		<script>RegErrorHandler(error);</script>
-  	<?php endforeach ?>
-  </div>
-<?php  endif ?> -->
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"

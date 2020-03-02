@@ -19,7 +19,7 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="navbar-brand" href="#">
-                    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt="">
+                    <!-- <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> -->
                 </a>
             </li>
             <li class="nav-item">
@@ -45,7 +45,6 @@
         <input type="submit" name="login" value="Login" >
         <a href = "../cgi-bin/register.php" >New? Register now</a>
     </form>
-    <?php include('loginerrors.php'); ?>
     
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
