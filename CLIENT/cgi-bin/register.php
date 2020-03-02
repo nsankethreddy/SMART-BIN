@@ -83,12 +83,14 @@ function register_user($username,$password,$mysqli){
     // $current_date = date('Y-m-d');
 
 
-    $query = "INSERT INTO account (user_id,username, password)
-              VALUES(NULL, '$username', '$password');";
+    $query = "INSERT INTO account VALUES(NULL, '$username', '$password');";
 
     // $query_json = "INSERT INTO player_data VALUES('$username','$default_data');";
 
-    mysqli_query($mysqli, $query);
+    if ($result = $mysqli->query($query))
+    {
+      echo 'success';
+    }
     // mysqli_query($mysqli, $query_json);
 
     $_SESSION['username'] = $username;
