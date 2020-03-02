@@ -3,15 +3,17 @@
 // include('connect/mysqli_connect.php');
 session_start();
 
-include_once('connect/mysqli_connect.php');
 $errors = array();
 $username = "";
-// $email = "";
-// $timezone = date_default_timezone_get();
-if(!$dbc){
-    echo "Unable to connect";
+$uname = "root";
+$password = "Reaper42@";
+$database = "smart_bins";
+$mysqli = new mysqli("localhost", $uname, $password, $database);
+if ($mysqli -> connect_errno) {
+  echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+  exit();
 }
-echo "ahd";
+
 //this checks for basic user input errors like blank fields and non-matching passwords
 function validate_form($username,$password,$password_confirm){
     $errors = array();
@@ -29,7 +31,7 @@ function validate_form($username,$password,$password_confirm){
     }
 
     return $errors;
-    
+
 }
 
 function check_data_errors($username,$password,$password_confirm){
@@ -54,19 +56,19 @@ function check_data_errors($username,$password,$password_confirm){
 
 }
 
-function check_existing_username($username,$dbc){
+function check_existing_username($username,$mysqli){
 
     $errors = array();
     //now check if the user already exists
     $user_check_query = "SELECT * FROM account WHERE username='$username' LIMIT 1;";
-    $result = mysqli_query($dbc, $user_check_query);
+    $result = mysqli_query($mysqli, $user_check_query);
     $user = mysqli_fetch_assoc($result);
-    
+
     if ($user) { // if user exists
       if ($user['username'] === $username) {
         array_push($errors, "Username already exists");
       }
-  
+
     //   if ($user['email'] === $email && count($errors)!=1 ) {
     //     array_push($errors, "email already exists");
     //   }
@@ -74,25 +76,25 @@ function check_existing_username($username,$dbc){
     return $errors;
 }
 
-function register_user($username,$password,$dbc){
+function register_user($username,$password,$mysqli){
     $password = md5($password);//encrypt the password before saving in the database
 
-          
+
     // $current_date = date('Y-m-d');
 
 
-    $query = "INSERT INTO account (user_id,username, password) 
+    $query = "INSERT INTO account (user_id,username, password)
               VALUES(NULL, '$username', '$password');";
 
     // $query_json = "INSERT INTO player_data VALUES('$username','$default_data');";
 
-    mysqli_query($dbc, $query); 
-    // mysqli_query($dbc, $query_json); 
+    mysqli_query($mysqli, $query);
+    // mysqli_query($mysqli, $query_json);
 
     $_SESSION['username'] = $username;
     $_SESSION['success'] = "You are now logged in";
     // $_SESSION['user_data'] = $default_data;
-    
+
     // header('location: ../views/start.html');
 
 }
@@ -108,11 +110,11 @@ function trim_data(&$username,&$password){
 if(isset($_POST['submit'])){
     echo "abjPOST";
     //receive all inputs from the form
-    $username = mysqli_real_escape_string($dbc, $_POST['username']);
-    // $email = mysqli_real_escape_string($dbc, $_POST['email']);
-    $password = mysqli_real_escape_string($dbc, $_POST['password']);
-    $password_confirm = mysqli_real_escape_string($dbc, $_POST['password_confirm']);
-    
+    $username = mysqli_real_escape_string($mysqli, $_POST['username']);
+    // $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+    $password = mysqli_real_escape_string($mysqli, $_POST['password']);
+    $password_confirm = mysqli_real_escape_string($mysqli, $_POST['password_confirm']);
+
     $form_errors = array();$data_errors = array();$name_errors = array();
     //Form validation time
     //Adds all errors to their error arrays
@@ -121,10 +123,10 @@ if(isset($_POST['submit'])){
         $data_errors = check_data_errors($username,$password,$password_confirm);
     }
     if(empty($form_errors) && empty($data_errors)){
-        $name_errors = check_existing_username($username,$dbc);
+        $name_errors = check_existing_username($username,$mysqli);
 
     }
-    
+
     $errors = $form_errors;
     foreach($data_errors as $error){
         array_push($errors,$error);
@@ -138,9 +140,9 @@ if(isset($_POST['submit'])){
     if(empty($form_errors) && empty($data_errors) && empty($name_errors)){
         // echo "<p class = 'txt-white'>You have successfully registered</p>";
         // echo "reg:";
-        // echo  mysqli_get_host_info($dbc);
+        // echo  mysqli_get_host_info($mysqli);
 
-        register_user($username,$password,$dbc);
+        register_user($username,$password,$mysqli);
     }
 }
 ?>
