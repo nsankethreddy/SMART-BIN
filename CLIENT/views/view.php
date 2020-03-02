@@ -30,7 +30,7 @@
                <th> <font face="Arial">Location ID</font> </th>
            </tr>';
 
-      if ($result = $mysqli->query($query)) {
+        if ($result = $mysqli->query($query)) {
          while ($row = $result->fetch_assoc()) {
              $field1name = $row["user_id"];
              $field2name = $row["username"];

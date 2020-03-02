@@ -14,7 +14,7 @@ if ($mysqli -> connect_errno) {
   exit();
 }
 $query = "INSERT INTO account VALUES(NULL,"uname","pass")";
-if ($result = $mysqli->query($query))
+if (mysql_query($query))
 {
   echo "Success";
 }
