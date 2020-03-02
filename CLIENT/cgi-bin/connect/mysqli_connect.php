@@ -7,7 +7,7 @@ DEFINE ('DB_USER', 'root');
 //passwd
     DEFINE ('DB_PASSWORD', 'Reaper42@');
 DEFINE ('DB_HOST', 'localhost');
-DEFINE ('DB_NAME', 'adytum');
+DEFINE ('DB_NAME', 'smart_bins');
 
 // $dbc will contain a resource link to the database
 // @ keeps the error from showing in the browser

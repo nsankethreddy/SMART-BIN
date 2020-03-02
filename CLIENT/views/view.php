@@ -1,6 +1,5 @@
 <html>
   <body>
-    <link rel="stylesheet" type="text/css" href="css/general.css">
 
     <?php
 
@@ -17,7 +16,7 @@
     else
     {
       $query = "SELECT * FROM bin_info";
-      echo '<div style="overflow-x:auto;">'
+      echo '<div style="overflow-x:auto;">';
       echo '<table border="0" cellspacing="2" cellpadding="2">
            <tr>
                <th> <font face="Arial">User ID</font> </th>
