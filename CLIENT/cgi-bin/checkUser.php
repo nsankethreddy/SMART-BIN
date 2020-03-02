@@ -23,7 +23,7 @@ function process_user(&$username,&$password){
 function check_user($username,$password,$dbc){
     $errors = array();
     $password = md5($password);
-    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $query = "SELECT * FROM account WHERE username='$username' AND password='$password'";
     $results = mysqli_query($dbc, $query);
     if (mysqli_num_rows($results) != 1) {
         array_push($errors, "Wrong username/password combination");
