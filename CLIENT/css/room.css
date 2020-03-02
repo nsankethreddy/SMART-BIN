@@ -1,0 +1,147 @@
+@keyframes activeSwitch {
+    from {
+        display: none;
+    }
+
+    to {
+        display: block;
+    }
+}
+
+
+body {
+    background: black;
+    text-align: center;
+    /* background-image: url("background.png");
+    background-size: cover;
+    background-position: center; /* Center the image */
+    /*background-repeat: no-repeat; Do not repeat the image */
+}
+
+.room {
+    text-align: center;
+    /* background-image: url("../images/background.png"); */
+    background-size: contain;
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    height: 88%;
+    width: 62.775%;
+    border-radius: 4px;
+    border-style: none;
+    position: relative;
+    left: 17%;
+}
+
+.room-button {
+    position: relative;
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+    /* color: white; */
+    background-color:#0270eec2;    
+    border-radius: 20px;
+    border-style: solid; 
+    border-color: #0270EE;
+}
+.room-button:hover{
+    background-color:#0091ff ;
+    transition: background-color 0.5s;
+}
+.top{
+    position: absolute;
+    top: 10px;
+    left: 48%;
+}
+.bottom {
+    position: absolute;
+    bottom: 10px;
+    left: 48%;
+}
+
+.left {
+    position: absolute;
+    top: 41.3vh;
+    left: 43px;
+    padding: 0px;
+}
+
+.right {
+    position: absolute;
+    top: 41.3vh;
+    right: 43px;
+    padding: 0px;
+}
+
+.showPuzzle {
+    position: absolute;
+    top: 45vh;
+}
+
+#puzzle {
+    height: 90%;
+    width: 64%;
+    position: absolute;
+    top: 10%;
+    left: 16%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    z-index: 1;
+    transition: 0.5s;
+    border-radius: 4px;
+    /* vertical-align: 50%; */
+}
+.wrapper{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+iframe {
+    display: block;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+    width: 75vw;
+    height: 75vh;
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    background-color:#F44336;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #F44336;
+}
+.closebtn:hover{
+    background-color: #E53935;
+    transition: background-color 1s;
+}
+.closebtn:before{
+    content: "\00d7";
+}
+
+.Active {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition:visibility 0s, opacity 0.5s ;
+    transition-timing-function: ease-in;
+    /* animation-name: activeSwitch;
+    animation-duration: 1s;
+    animation-timing-function: ease-in; */
+}
+
+.Inactive {
+    display: block; 
+    visibility: hidden;
+    opacity: 0;
+    transition:visibility 0s, opacity 0.5s;
+    transition-timing-function: ease-in;
+}

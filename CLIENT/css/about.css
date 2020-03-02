@@ -1,0 +1,16 @@
+body{
+    background-color:rgb(20, 20, 20);
+}
+
+#overview-title{
+    color : gainsboro;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.generic-text{
+    color :whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: left;
+}

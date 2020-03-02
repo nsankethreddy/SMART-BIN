@@ -81,13 +81,14 @@ function register_user($username,$password,$dbc){
     // $current_date = date('Y-m-d');
 
 
-    $query = "INSERT INTO account (user_id,username, password) 
-              VALUES(NULL, '$username', '$password');";
+    $query = "INSERT INTO  account VALUES(NULL, '$username', '$password');";
 
     // $query_json = "INSERT INTO player_data VALUES('$username','$default_data');";
 
+    
     mysqli_query($dbc, $query); 
     // mysqli_query($dbc, $query_json); 
+    // echo "<script>console.log(".$username.")</script>";
 
     $_SESSION['username'] = $username;
     $_SESSION['success'] = "You are now logged in";
@@ -111,6 +112,8 @@ if(isset($_POST['submit'])){
     $username = mysqli_real_escape_string($dbc, $_POST['username']);
     // $email = mysqli_real_escape_string($dbc, $_POST['email']);
     $password = mysqli_real_escape_string($dbc, $_POST['password']);
+    // echo $username;
+    // echo $password;
     $password_confirm = mysqli_real_escape_string($dbc, $_POST['password_confirm']);
     
     $form_errors = array();$data_errors = array();$name_errors = array();
@@ -139,7 +142,7 @@ if(isset($_POST['submit'])){
         // echo "<p class = 'txt-white'>You have successfully registered</p>";
         // echo "reg:";
         // echo  mysqli_get_host_info($dbc);
-
+        echo "ayyyyyyyyyy mao";
         register_user($username,$password,$dbc);
     }
 }
@@ -166,7 +169,7 @@ if(isset($_POST['submit'])){
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="navbar-brand" href="#">
-                    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt="">
+                    <!-- <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> -->
                 </a>
             </li>
             <li class="nav-item">
@@ -196,17 +199,6 @@ if(isset($_POST['submit'])){
         <a href = "../cgi-bin/login.php" >Already a user? Sign in</a>
 
     </form>
-    <!-- <?php  if (count($errors) > 0) : ?>
-  <div class="error">
-  	<?php foreach ($errors as $error) : ?>
-		<script>
-			var error = <?php echo json_encode($error) ?>;
-		</script>
-		<!-- <script src = '../src/error.js'></script> -->
-		<script>RegErrorHandler(error);</script>
-  	<?php endforeach ?>
-  </div>
-<?php  endif ?> -->
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
