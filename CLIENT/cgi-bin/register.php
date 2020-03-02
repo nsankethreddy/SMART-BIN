@@ -11,7 +11,7 @@ $username = "";
 if(!$dbc){
     echo "Unable to connect";
 }
-
+echo "ahd";
 //this checks for basic user input errors like blank fields and non-matching passwords
 function validate_form($username,$password,$password_confirm){
     $errors = array();
@@ -74,14 +74,14 @@ function check_existing_username($username,$dbc){
     return $errors;
 }
 
-function register_user($username,$email,$password,$dbc){
+function register_user($username,$password,$dbc){
     $password = md5($password);//encrypt the password before saving in the database
 
           
     // $current_date = date('Y-m-d');
 
 
-    $query = "INSERT INTO users (user_id,username, password) 
+    $query = "INSERT INTO account (user_id,username, password) 
               VALUES(NULL, '$username', '$password');";
 
     // $query_json = "INSERT INTO player_data VALUES('$username','$default_data');";
@@ -97,15 +97,16 @@ function register_user($username,$email,$password,$dbc){
 
 }
 
-function trim_data(&$username,&$email,&$password){
+function trim_data(&$username,&$password){
     trim($username);
-    trim($email);
+    // trim($email);
     trim($password);
 }
 
 //main
 
 if(isset($_POST['submit'])){
+    echo "abjPOST";
     //receive all inputs from the form
     $username = mysqli_real_escape_string($dbc, $_POST['username']);
     // $email = mysqli_real_escape_string($dbc, $_POST['email']);
@@ -195,8 +196,7 @@ if(isset($_POST['submit'])){
         <a href = "../cgi-bin/login.php" >Already a user? Sign in</a>
 
     </form>
-    <!-- <?php include('regerrors.php'); ?> -->
-    <?php  if (count($errors) > 0) : ?>
+    <!-- <?php  if (count($errors) > 0) : ?>
   <div class="error">
   	<?php foreach ($errors as $error) : ?>
 		<script>
@@ -206,7 +206,7 @@ if(isset($_POST['submit'])){
 		<script>RegErrorHandler(error);</script>
   	<?php endforeach ?>
   </div>
-<?php  endif ?>
+<?php  endif ?> -->
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
