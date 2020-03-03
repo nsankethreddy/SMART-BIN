@@ -7,9 +7,8 @@ The project has been implemented as an IoT system which captures images through 
 
 * Files to be placed in Raspberry Pi are in ```PI/```
 * Files to be placed in the Server are in ```SERVER/```
-* Files for frontend are placed in ```CLIENT/```
-* Directory structures are mentioned within ```location.md``` in both Pi and Server
-
+* Files for Web Server (Frontend) are placed in ```CLIENT/```
+* Directory structures are mentioned within ```location.md``` for all Pi, Server and Web Server.
 ## Requirements
 * Tensorflow
 * Keras
