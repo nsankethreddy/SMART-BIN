@@ -21,3 +21,8 @@ The project has been implemented as an IoT system which captures images through 
 * Setup directories according to each ```location.md```
 * Run ```python3 ir.py``` from the home directory in the pi.
 Machine Learning Model is in Server along with trained weights.
+      
+## Results  
+* We had trained our model for 100 epochs and it gave an accuracy of 87%  .
+* And when we re-trained it again for 200 epochs the model predicted with 91% accuracy.  
+
