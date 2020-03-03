@@ -7,7 +7,7 @@ The project has been implemented as an IoT system which captures images through 
 
 * Files to be placed in Raspberry Pi are in ```PI/```
 * Files to be placed in the Server are in ```SERVER/```
-* Files for frontend are placed in ```CLIENT/```. Move them accordingly to required destination. Eg: ```/var/www/html``` for when Apache is used as server.
+* Files for frontend are placed in ```CLIENT/```
 * Directory structures are mentioned within ```location.md``` in both Pi and Server
 
 ## Requirements
