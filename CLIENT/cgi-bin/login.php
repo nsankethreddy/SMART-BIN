@@ -37,7 +37,7 @@
         </ul>
     </nav>
 
-    <form action="../cgi-bin/login.php" method="POST" class="login-box">
+    <form action="../views/view.php" method="POST" class="login-box">
 
         <h1>Sign in</h1>
         <input type="text" name="username" placeholder="Username" id = "login-username">

@@ -8,6 +8,8 @@
     <?php
 
     session_start();
+    $uname = $_POST['username'];
+    $pass = $_POST['password'];
 
     $username = "root";
     $password = "Reaper42@";
@@ -19,7 +21,7 @@
     }
     else
     {
-      $query = "SELECT * FROM bin_info";
+      $query = "SELECT * FROM bin_info WHERE username = '$uname' AND password = '$pass';";
       echo '<div style="overflow-x:auto;">';
       echo '<table border="0" cellspacing="2" cellpadding="2">
            <tr>
