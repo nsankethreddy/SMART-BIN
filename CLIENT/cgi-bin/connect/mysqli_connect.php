@@ -5,7 +5,7 @@
 // Defined as constants so that they can't be changed
 DEFINE ('DB_USER', 'root');
 //passwd
-    DEFINE ('DB_PASSWORD', 'Reaper42@');
+    DEFINE ('DB_PASSWORD', 'password');
 DEFINE ('DB_HOST', 'localhost');
 DEFINE ('DB_NAME', 'smart_bins');
 
