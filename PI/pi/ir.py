@@ -17,7 +17,7 @@ try:
    while True:
       if GPIO.input(sensor):
           #GPIO.output(buzzer,True)
-          print("no")
+          print("Yet to sense object...")
           while GPIO.input(sensor):
               time.sleep(0.2)
       else:
